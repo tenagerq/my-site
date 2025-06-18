@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Магазин Люстр</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Montserrat', sans-serif;
+            background-color: #636342;
+            color: #fff;
+        }
+
+        .hero {
+            background: url('img/room.jpg') center/cover no-repeat;
+            height: 500px;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            color: white;
+            text-align: left;
+            padding: 20px 40px;
+            padding-left: 100px;
+        }
+
+        .hero-text h1 {
+            font-size: 48px;
+            font-weight: 800;
+            margin-bottom: 10px;
+            color: #CDCD84;
+        }
+
+        .hero-text p {
+            font-size: 20px;
+            font-weight: 400;
+            color: #FFFFFF;
+            
+        }
+
+        .btn {
+            margin-top: 10px;
+            padding: 12px 20px;
+            background-color: #919191;
+            border: none;
+            color: #000;
+            font-weight:lighter;
+            cursor: pointer;
+            border-radius: 8px;
+        }
+
+        .features,
+        .catalog,
+        .reviews {
+            padding: 40px;
+        }
+
+        .features {
+            display: flex;
+            justify-content: space-around;
+            padding: 30px 0;
+            gap: 40px;
+            flex-wrap: wrap;
+        }
+
+        .feature-item {
+            display: flex;
+            align-items: center;
+            font-size: 16px;
+            color: #000;
+            font-weight: bold;
+
+        }
+
+        .feature-item i {
+            font-size: 24px;
+            margin-right: 10px;
+        }
+
+        .catalog h2,
+        .reviews h2 {
+            margin-bottom: 20px;
+            color: black;
+        }
+
+        .catalog h2 {
+            font-size: 32px;
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            padding: 40px 0;
+            max-width: 1500px;
+            margin: 0 auto;
+        }
+
+        .product-card {
+            background: white;
+            border-radius: 12px;
+            padding: 20px 15px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .product-card img {
+            max-width: 100%;
+            height: 150px;
+            object-fit: contain;
+            margin-bottom: 10px;
+        }
+
+        .product-info {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 16px;
+            padding: 0 5px;
+            color: black;
+        }
+
+        .add-to-cart {
+            margin-top: 10px;
+            width: 100%;
+            background: #333;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            padding: 10px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        .add-to-cart:hover {
+            background: #555;
+        }
+
+
+        .reviews {
+            max-width: 1100px;
+            padding: 20px 10px;
+            background-color: #636342;
+            padding-left: 100px;
+        }
+
+        .reviews h2 {
+            color: #1e1e1e;
+            font-size: 32px;
+            font-weight: 800;
+            margin-bottom: 20px;
+            padding-left: 10px;
+        }
+
+        .reviews-columns {
+            column-count: 2;
+            column-gap: 10px;
+        }
+
+        .review-box {
+            background-color: #D9D9D9;
+            color: #000;
+            border-radius: 10px;
+            padding: 5px 20px;
+            font-size: 16px;
+            font-weight: bold;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            margin-bottom: 6px;
+            display: inline-block;
+            width: 100%;
+        }
+
+        footer {
+            background-color: #121212;
+            color: #eee;
+            padding: 60px 80px;
+            font-size: 14px;
+            font-family: 'Open Sans', sans-serif;
+        }
+
+        .footer-container {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            max-width: 1000px;
+            padding-left: 400px;
+        }
+
+        .footer-column {
+            flex: 1;
+            min-width: 100px;
+            margin: 10px 20px;
+        }
+
+        .footer-column h4 {
+            margin-bottom: 16px;
+            font-weight: bolder;
+            font-size: 16px;
+        }
+
+        .footer-column a {
+            display: block;
+            color: #eeeeeeda;
+            text-decoration: none;
+            margin-bottom: 8px;
+            font-size: 12px;
+            transition: color 0.2s ease;
+            font-weight: 100;
+        }
+
+        .footer-column a:hover {
+            color: #CDCD84;
+        }
+
+        .footer-column p {
+            margin: 6px 0;
+        }
+
+        .footer-column strong {
+            font-weight: bold;
+        }
+
+        .social-icons i {
+            font-size: 18px;
+            margin-right: 15px;
+            cursor: pointer;
+            transition: color 0.2s ease;
+        }
+
+        .social-icons i:hover {
+            color: #CDCD84;
+        }
+
+        footer hr {
+            width: 60%;
+        }
+
+        @media (max-width: 1440px) {
+            footer hr {
+                position: relative;
+                width: 60%;
+                left: 70px;
+        }
+        .footer-container {
+                padding-left: 200px;
+            }   
+        .product-grid {
+            max-width: 1200px;
+        }
+        }
+
+
+    </style>
+</head>
+
+<body>
+    <section class="hero">
+        <div class="hero-text">
+            <h1>Освітлення,<br>яке змінює<br>простір</h1>
+            <p>Ексклюзивні люстри для вашого дому та<br>бізнесу</p>
+            <button class="btn">Переглянути каталог</button>
+        </div>
+    </section>
+
+    <section class="features">
+        <div class="feature-item">
+            <i class="fas fa-screwdriver-wrench"></i>
+            <span>Індивідуальне<br>виготовлення</span>
+        </div>
+        <div class="feature-item">
+            <i class="fas fa-truck-fast"></i>
+            <span>Швидка доставка по<br>Україні</span>
+        </div>
+        <div class="feature-item">
+            <i class="fas fa-shield-halved"></i>
+            <span>Гарантія якості – 5<br>років</span>
+        </div>
+    </section>
+
+
+    <section class="catalog">
+        <h2>Каталог</h2>
+        <div class="product-grid">
+            <div class="product-card">
+                <img src="img/l1.jpg" alt="Люстра 'Мела'" />
+                <div class="product-info">
+                    <p class="product-title">Люстра ‘Мела’</p>
+                    <p class="product-price"><strong>7800 грн</strong></p>
+                </div>
+                <button class="add-to-cart">У кошик</button>
+            </div>
+
+            <div class="product-card">
+                <img src="img/L2.jpg" alt="Люстра 'Мела'" />
+                <div class="product-info">
+                    <p class="product-title">Люстра ‘Мела’</p>
+                    <p class="product-price"><strong>7800 грн</strong></p>
+                </div>
+                <button class="add-to-cart">У кошик</button>
+            </div>
+
+            <div class="product-card">
+                <img src="img/L3.jpg" alt="Люстра 'Мела'" />
+                <div class="product-info">
+                    <p class="product-title">Люстра ‘Мела’</p>
+                    <p class="product-price"><strong>7800 грн</strong></p>
+                </div>
+                <button class="add-to-cart">У кошик</button>
+            </div>
+
+            <div class="product-card">
+                <img src="img/L4.jpg" alt="Люстра 'Мела'" />
+                <div class="product-info">
+                    <p class="product-title">Люстра ‘Мела’</p>
+                    <p class="product-price"><strong>7800 грн</strong></p>
+                </div>
+                <button class="add-to-cart">У кошик</button>
+            </div>
+
+            <div class="product-card">
+                <img src="img/L5.jpg" alt="Люстра 'Мела'" />
+                <div class="product-info">
+                    <p class="product-title">Люстра ‘Мела’</p>
+                    <p class="product-price"><strong>7800 грн</strong></p>
+                </div>
+                <button class="add-to-cart">У кошик</button>
+            </div>
+
+            <div class="product-card">
+                <img src="img/L6.jpg" alt="Люстра 'Мела'" />
+                <div class="product-info">
+                    <p class="product-title">Люстра ‘Мела’</p>
+                    <p class="product-price"><strong>7800 грн</strong></p>
+                </div>
+                <button class="add-to-cart">У кошик</button>
+            </div>
+
+        </div>
+
+    </section>
+
+    <section class="reviews">
+        <h2>Відгуки клієнтів</h2>
+        <div class="reviews-grid">
+            <div class="review-box">
+                <p>Замовила люстру в спальню — виглядає, як з Pinterest 😍 Швидко приїхала, все
+                    акуратно запаковано. Дякую!</p>
+            </div>
+            <div class="review-box">
+                <p>Довго вагався між кількома моделями, але консультант по телефону все чітко пояснив.
+                    Замовив люстру ‘Астор’ — виглядає дорого, але ціна приємна. Упаковка супер, інструкція проста.
+                    Зробили кімнату світлою і сучасною ✨</p>
+            </div>
+            <div class="review-box">
+                <p><strong>Ми робили ремонт і дуже довго шукали щось унікальне. Натрапили на цей магазин — і не
+                        помилились! Обрали люстру в скандинавському стилі, вона стала головною родзинкою кімнати 🏡
+                        Доставили вчасно, все добре упаковано. Щиро дякую!</p>
+            </div>
+            <div class="review-box">
+                <p>“Я взагалі не думала, що люстра може змінити атмосферу на кухні, але тепер кожен вечір — як в кафе ✨
+                    Взяли модель із теплим світлом і дерев’яними вставками — ідеально вписалась у наш інтер’єр.
+                    Хочу особливо подякувати за сервіс: зв’язались через 10 хв після замовлення, порадили колір під
+                    плитку (!) і ще й дали знижку за підписку 😎
+                    Тепер плануємо замовити ще одну для спальні. Дуже задоволена, дякую вам 💛”
+                </p>
+            </div>
+        </div>
+    </section>
+
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-column">
+                <h4>Learn More</h4>
+                <a href="#">About Lift</a>
+                <a href="#">Press Releases</a>
+                <a href="#">Environment</a>
+                <a href="#">Jobs</a>
+                <a href="#">Privacy Policy</a>
+                <a href="#">Contact Us</a>
+            </div>
+            <div class="footer-column">
+                <h4>Tickets & Booking</h4>
+                <a href="#">Lift Tickets</a>
+                <a href="#">Season Passes</a>
+                <a href="#">Vacation Packages</a>
+            </div>
+            <div class="footer-column">
+                <h4>Contact Us</h4>
+                <a>Hotel Reservation: <strong>123-456-7890</strong></a>
+                <a>Ticket Office: <strong>123-456-7890</strong></a>
+            </div>
+            <div class="footer-column">
+                <h4>Social</h4>
+                <div class="social-icons">
+                    <i class="fab fa-facebook"></i>
+                    <i class="fab fa-instagram"></i>
+                    <i class="fab fa-youtube"></i>
+                    <i class="fab fa-twitter"></i>
+                    <i class="fab fa-wordpress"></i>
+                </div>
+            </div>
+        </div>
+        <hr>
+    </footer>
+</body>
+
+</html>
